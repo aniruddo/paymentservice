@@ -9,8 +9,12 @@ public class PaymentGatewayChooserStrategy {
     @Autowired
     private RazorpayPaymentGateway razorpayPaymentGateway;
 
-
+    @Autowired
+    private StripePaymentGateway stripePaymentGateway;
     public PaymentGateway getPaymentGateway() {
-        return razorpayPaymentGateway;
+
+        // can generate a random number and based on that number can return the payment gateway
+        // or can have some other logic to choose the payment gateway
+        return stripePaymentGateway;
     }
 }
